@@ -7,11 +7,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Company */}
           <div className="fade-in">
+            <Link href="/" className="flex items-center flex-shrink-0">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/effred_logo-UWQD6DBk7NwaHtDfctGUyqMjNARjHS.jpg"
+              src="/logo.png"
               alt="Effred"
-              className="h-8 w-auto mb-4"
+              className="h-8 w-auto"
             />
+            <span
+              className="text-xl font-bold text-white"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Effred
+            </span>
+          </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Automate. Accelerate. Achieve. Enterprise automation solutions for modern businesses.
             </p>

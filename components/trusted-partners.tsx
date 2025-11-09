@@ -26,7 +26,7 @@ export default function TrustedPartners() {
     },
     {
       name: "Google Cloud",
-      logo: "https://images.unsplash.com/photo-1529612700005-e35377bf1415?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z29vZ2xlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
+      logo: "google cloud.png",
     },
     {
       name: "Databricks",
@@ -34,11 +34,11 @@ export default function TrustedPartners() {
     },
     {
       name: "Apache Foundation",
-      logo: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=200&h=100&fit=crop",
+      logo: "apache.png",
     },
     {
       name: "Kubernetes",
-      logo: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=100&fit=crop",
+      logo: "Kubernetes.jpeg",
     },
   ]
 
