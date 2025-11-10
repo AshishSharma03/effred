@@ -25,8 +25,8 @@ export default function Header() {
   ]
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !(dropdownRef.current as HTMLElement).contains(event.target as Node)) {
         setDropdownOpen(false)
       }
     }
@@ -38,12 +38,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
-            <img
-              src="/logo.png"
-              alt="Effred"
-              className="h-8 w-auto"
-            />
+            <img src="/logo.png" alt="Effred" className="h-8 w-auto" />
             <span
               className="text-xl font-bold text-white"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -52,6 +49,7 @@ export default function Header() {
             </span>
           </Link>
 
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             <Link
               href="/"
@@ -60,6 +58,7 @@ export default function Header() {
               Home
             </Link>
 
+            {/* Dropdown */}
             <div
               ref={dropdownRef}
               className="relative"
@@ -131,6 +130,7 @@ export default function Header() {
             </Link>
           </nav>
 
+          {/* Mobile Menu Button */}
           <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 text-foreground">
             {isOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,19 +144,73 @@ export default function Header() {
           </button>
         </div>
 
+        {/* ✅ Mobile Navigation */}
         {isOpen && (
-          <nav className="lg:hidden border-t border-border py-4 space-y-2">
+          <nav className="lg:hidden border-t border-border py-4 space-y-2 animate-in fade-in slide-in-from-top-2 duration-200">
             <Link
               href="/"
               className="block px-4 py-2 text-foreground/80 hover:text-primary rounded font-medium transition"
             >
               Home
             </Link>
+
+            {/* Mobile Dropdown */}
+            <details className="px-4 group">
+              <summary className="cursor-pointer text-foreground/80 hover:text-primary font-medium flex items-center justify-between">
+                Products & Services
+                <svg
+                  className="w-4 h-4 ml-1 transition-transform group-open:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div className="pl-4 mt-3 space-y-1 glass-effect rounded-lg py-2">
+                <p className="text-xs font-semibold text-primary uppercase tracking-wider px-2">Products</p>
+                {products.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block py-1 text-sm text-foreground/80 hover:text-primary hover:bg-primary/5 rounded px-2 transition"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <p className="text-xs font-semibold text-primary uppercase tracking-wider mt-3 px-2">Services</p>
+                {services.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block py-1 text-sm text-foreground/80 hover:text-primary hover:bg-primary/5 rounded px-2 transition"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </details>
+
+            {/* ✅ Added “About” here */}
+            <Link
+              href="/about"
+              className="block px-4 py-2 text-foreground/80 hover:text-primary rounded font-medium transition"
+            >
+              About
+            </Link>
+
             <Link
               href="/contact"
               className="block px-4 py-2 text-foreground/80 hover:text-primary rounded font-medium transition"
             >
               Contact
+            </Link>
+
+            <Link
+              href="/contact"
+              className="block mx-4 mt-2 bg-primary text-white text-center px-6 py-2.5 rounded-lg hover:bg-red-700 transition duration-300 font-medium"
+            >
+              Get Started
             </Link>
           </nav>
         )}

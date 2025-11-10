@@ -20,7 +20,7 @@ export default function Home() {
       desc: "Enterprise-grade automation and AI solutions designed for modern businesses seeking competitive advantage",
     },
     {
-      image: "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=1400&h=900&fit=crop",
+      image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1106",
       title: "Cloud & Infrastructure Excellence",
       desc: "Seamless scaling and next-generation deployment strategies for enterprise applications",
     },
@@ -46,7 +46,7 @@ export default function Home() {
       href: "/services/automation",
     },
     {
-      image: "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=500&h=400&fit=crop",
+      image: "google cloud.png",
       title: "Cloud & DevOps",
       desc: "Secure migration and modern infrastructure mastery",
       href: "/services/cloud",
@@ -159,7 +159,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
-                  image: "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=600&h=400&fit=crop",
+                  image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1106",
                   title: "Enterprise Automation Success",
                   desc: "How we transformed workflow efficiency for leading enterprises across industries",
                   link: "/services/automation",

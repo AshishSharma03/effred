@@ -96,7 +96,7 @@ export default function Footer() {
                   />
                 </svg>
                 <a href="tel:+1234567890" className="hover:text-primary transition">
-                  +1 (234) 567-890
+       
                 </a>
               </li>
               <li className="flex items-center gap-2 text-xs">
@@ -108,7 +108,7 @@ export default function Footer() {
                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                   />
                 </svg>
-                San Francisco, CA
+                 Success tower gurugram, Haryana, India
               </li>
             </ul>
           </div>

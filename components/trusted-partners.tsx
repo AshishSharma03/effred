@@ -22,7 +22,7 @@ export default function TrustedPartners() {
     },
     {
       name: "Microsoft Azure",
-      logo: "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=200&h=100&fit=crop",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtm8uRc444DV-6FHChD5VKWkSNspoAOTbYUQ&s",
     },
     {
       name: "Google Cloud",
