@@ -83,10 +83,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a href="mailto:hello@effred.com" className="hover:text-primary transition">
-                  hello@effred.com
+              info@effred.com 
                 </a>
               </li>
-              <li className="flex items-center gap-2">
+              {/* <li className="flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -98,7 +98,7 @@ export default function Footer() {
                 <a href="tel:+1234567890" className="hover:text-primary transition">
        
                 </a>
-              </li>
+              </li> */}
               <li className="flex items-center gap-2 text-xs">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -108,7 +108,7 @@ export default function Footer() {
                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                   />
                 </svg>
-                 Success tower gurugram, Haryana, India
+                Suncity Success Tower, Golf Course Ext Rd, The Close South, Sector 65, Gurugram, Haryana 122101
               </li>
             </ul>
           </div>

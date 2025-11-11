@@ -103,11 +103,11 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                       <a href="mailto:hello@effred.com" className="text-gray-600 hover:text-red-600">
-                        hello@effred.com
+                        info@effred.com 
                       </a>
                     </div>
                   </div>
-                  <div className="flex gap-4">
+                  {/* <div className="flex gap-4">
                     <span className="text-2xl">📞</span>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
@@ -115,13 +115,13 @@ export default function Contact() {
                         +1 (234) 567-890
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="flex gap-4">
                     <span className="text-2xl">📍</span>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
                       <p className="text-gray-600">
-                        San Francisco, California
+                  Suncity Success Tower, Golf Course Ext Rd, The Close South, Sector 65, Gurugram, Haryana 122101
                         <br />
                         United States
                       </p>

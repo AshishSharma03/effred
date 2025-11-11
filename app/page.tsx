@@ -106,31 +106,47 @@ export default function Home() {
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-              <div className="max-w-3xl">
-                <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight slide-up">
-                  {slides[currentSlide].title}
-                </h1>
-                <p
-                  className="text-xl sm:text-2xl text-foreground/80 mb-8 slide-up max-w-2xl"
-                  style={{ animationDelay: "0.1s" }}
-                >
-                  {slides[currentSlide].desc}
-                </p>
-                <div className="flex gap-4 flex-wrap slide-up" style={{ animationDelay: "0.2s" }}>
-                  <button
-                    onClick={() => setIsContactOpen(true)}
-                    className="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 text-lg"
-                  >
-                    Get Started
-                  </button>
-                  <Link
-                    href="/about"
-                    className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition duration-300 text-lg"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
+              <div className="max-w-4xl text-center sm:text-left px-4">
+  <h1
+    className="
+      font-bold text-white mb-4 slide-up
+      text-3xl sm:text-4xl md:text-6xl lg:text-7xl
+      leading-snug sm:leading-tight md:leading-tight lg:leading-tight
+    "
+  >
+    {slides[currentSlide].title}
+  </h1>
+
+  <p
+    className="
+      text-gray-200 slide-up mb-6
+      text-sm sm:text-base md:text-lg lg:text-xl
+      max-w-md sm:max-w-lg md:max-w-2xl
+    "
+    style={{ animationDelay: "0.1s" }}
+  >
+    {slides[currentSlide].desc}
+  </p>
+
+  <div
+    className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-4 slide-up"
+    style={{ animationDelay: "0.2s" }}
+  >
+    <button
+      onClick={() => setIsContactOpen(true)}
+      className="bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 text-base sm:text-lg w-full sm:w-auto"
+    >
+      Get Started
+    </button>
+    <Link
+      href="/about"
+      className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white/10 transition duration-300 text-base sm:text-lg w-full sm:w-auto text-center"
+    >
+      Learn More
+    </Link>
+  </div>
+</div>
+
             </div>
 
             {/* Slider indicators */}
