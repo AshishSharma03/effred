@@ -1,10 +1,9 @@
 "use client"
 
 import type React from "react"
-
+import { useState } from "react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import { useState } from "react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,11 +12,33 @@ export default function Contact() {
     company: "",
     message: "",
   })
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    alert("Thank you for your message! We will get back to you soon.")
-    setFormData({ name: "", email: "", company: "", message: "" })
+    setLoading(true)
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await res.json()
+
+      if (data.success) {
+        alert("✅ Thank you for your message! We will get back to you soon.")
+        setFormData({ name: "", email: "", company: "", message: "" })
+      } else {
+        alert("❌ Failed to send message. Please try again later.")
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -87,9 +108,12 @@ export default function Contact() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition"
+                    disabled={loading}
+                    className={`w-full py-3 rounded-lg font-semibold text-white transition ${
+                      loading ? "bg-gray-400 cursor-not-allowed" : "bg-red-600 hover:bg-red-700"
+                    }`}
                   >
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               </div>
@@ -102,26 +126,17 @@ export default function Contact() {
                     <span className="text-2xl">✉️</span>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                      <a href="mailto:hello@effred.com" className="text-gray-600 hover:text-red-600">
-                        info@effred.com 
+                      <a href="mailto:info@effred.com" className="text-gray-600 hover:text-red-600">
+                        info@effred.com
                       </a>
                     </div>
                   </div>
-                  {/* <div className="flex gap-4">
-                    <span className="text-2xl">📞</span>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                      <a href="tel:+1234567890" className="text-gray-600 hover:text-red-600">
-                        +1 (234) 567-890
-                      </a>
-                    </div>
-                  </div> */}
                   <div className="flex gap-4">
                     <span className="text-2xl">📍</span>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
                       <p className="text-gray-600">
-                  Suncity Success Tower, Golf Course Ext Rd, The Close South, Sector 65, Gurugram, Haryana 122101
+                        Suncity Success Tower, Golf Course Ext Rd, The Close South, Sector 65, Gurugram, Haryana 122101
                         <br />
                         United States
                       </p>
