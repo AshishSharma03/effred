@@ -8,6 +8,9 @@ export async function POST(request: Request) {
     const body = await request.json()
     const { name, email, company, message } = body
 
+    
+    
+    
     // 1️⃣ Create the transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,    
@@ -24,7 +27,7 @@ export async function POST(request: Request) {
     // 2️⃣ Define the email options
     const mailOptions = {
       from: `"Contact Form" <info@effred.com>`, // sender info
-      to: process.env.EMAIL_To, // where you want to receive messages
+      to: 'info@effred.com', // where you want to receive messages
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>Contact Form Submission</h2>
