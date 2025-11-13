@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 })
     // 2️⃣ Define the email options
     const mailOptions = {
-      from: `"${name}" <${process.env.EMAIL_To}>`, // sender info
+      from: "Contact Form" <info@effred.com>", // sender info
       to: process.env.EMAIL_To, // where you want to receive messages
       subject: `New Contact Form Submission from ${name}`,
       html: `
