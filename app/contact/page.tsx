@@ -138,7 +138,7 @@ export default function Contact() {
                       <p className="text-gray-600">
                         Suncity Success Tower, Golf Course Ext Rd, The Close South, Sector 65, Gurugram, Haryana 122101
                         <br />
-                        United States
+                        India
                       </p>
                     </div>
                   </div>
